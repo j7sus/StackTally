@@ -1,6 +1,6 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("./db");
-const Delibery = require("./Delivery");
+import { DataTypes } from "sequelize";
+import sequelize from "./db.js";
+import Delivery from "./Delivery.js";
 
 const Box = sequelize.define("Box", {
     boxNumber: {
@@ -18,7 +18,8 @@ const Box = sequelize.define("Box", {
 });
 
 // Delivery Boxes
-Box.belongsTo(Delibery, { foreignKey: "deliveryId" });
-Delibery.hasMany(Box, { foreignKey: "deliveryId"});
+Box.belongsTo(Delivery, { foreignKey: "deliveryId" });
+Delivery.hasMany(Box, { foreignKey: "deliveryId"});
+// https://sequelize.org/docs/v7/associations/belongs-to/
 
-module.exports = Box;
+export default Box;

@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-const sequelize = require("./db");
+import sequelize from "./db.js";
 
-const Delibery = sequelize.define("Delivery", {
+const Delivery = sequelize.define("Delivery", {
     userName: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -16,5 +16,5 @@ const Delibery = sequelize.define("Delivery", {
     },
 });
 
-module.exports = Delibery;
+export default Delivery;
 // https://sequelize.org/docs/v7/models/data-types/

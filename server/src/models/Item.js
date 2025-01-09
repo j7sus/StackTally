@@ -27,5 +27,6 @@ const Item = sequelize.define("Item", {
 // Boxes Items
 Item.belongsTo(Box, { foreignKey: "boxId" });
 Box.hasMany(Item, { foreignKey: "boxId" });
+// https://sequelize.org/docs/v7/associations/belongs-to/
 
-module.exports = Item;
+export default Item;
