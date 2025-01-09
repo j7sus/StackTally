@@ -5,6 +5,7 @@ import styles from './DeliveryListContainer.module.css';
 const DeliveryListContainer = () => {
   	return (
     		<div className={styles.frameParent}>
+          
       			<div className={styles.frameGroup}>
         				<div className={styles.package224dp5f6368Fill0WgParent}>
           					<img className={styles.package224dp5f6368Fill0WgIcon} alt="" src="src/assets/Icons/package_2_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" />
@@ -15,6 +16,7 @@ const DeliveryListContainer = () => {
           					<div className={styles.div}>Lun 17</div>
         				</div>
       			</div>
+
       			<div className={styles.instanceParent}>
         				<div className={styles.frameWrapper}>
           					<div className={styles.frameGroup}>
@@ -64,7 +66,8 @@ const DeliveryListContainer = () => {
           					</div>
         				</div>
       			</div>
-    		</div>);
+    		</div>
+        );
 };
 
 export default DeliveryListContainer;

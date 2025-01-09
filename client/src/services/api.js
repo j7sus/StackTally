@@ -1,3 +1,4 @@
+// Simulate Deliveries
 export const getMockDeliveries = async () => {
     return [
       { id: 1, userName: "Karina", date: "2025-01-08", totalBoxes: 10 },
@@ -6,7 +7,7 @@ export const getMockDeliveries = async () => {
     ]; 
 };
 
-
+// Simulate Boxes
 export const getMockBoxes = async () => {
     return [
         { id: 1, boxNumber: "12345", store: "BCN", totalItems: 10, date: "2025-01-08" },
@@ -14,3 +15,5 @@ export const getMockBoxes = async () => {
         { id: 3, boxNumber: "67897", store: "VLC", totalItems: 11, date: "2025-01-06" },
     ];
 };
+
+// Simulate Items
