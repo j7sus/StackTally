@@ -5,5 +5,21 @@
 }
 
 .app-container  {
-    background-color: yellow;
+    /* background-color: yellow; */
 }
+
+.delivery-list-container {
+    background-color: bisque;
+}
+
+.delivery-container {
+    background-color: aqua;
+    width: 280px;
+}
+
+body {
+    margin: 0; line-height: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@700&display=swap');

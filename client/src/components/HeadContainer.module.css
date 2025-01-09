@@ -1,0 +1,78 @@
+
+.boxNumber {
+    width: 210px;
+    position: relative;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+.boxNumberItemNumberWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.icons24search {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.frameGroup {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.frameWrapper {
+    flex: 1;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px 16px;
+}
+.vectorIcon {
+    width: 20px;
+    position: relative;
+    height: 20px;
+}
+.qrCodeScanner24dp5f6368Fi {
+    width: 43px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    background-color: #fff;
+    height: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.frameParent {
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 48px 16px 16px;
+    box-sizing: border-box;
+    gap: 16px;
+    text-align: left;
+    font-size: 14px;
+    color: #989898;
+    font-family: 'SF Pro';
+}
+

@@ -1,0 +1,56 @@
+.package224dp5f6368Fill0WgIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.sync {
+    position: relative;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+.buttonssecondary {
+    flex: 1;
+    border-radius: 24px;
+    border: 2px solid #6a4874;
+    box-sizing: border-box;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 24px 13px 16px;
+    gap: 10px;
+}
+.buttons {
+    flex: 1;
+    border-radius: 24px;
+    background-color: #e9ee01;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 24px 13px 16px;
+    box-sizing: border-box;
+    gap: 10px;
+    color: #3a3119;
+}
+.buttonssecondaryParent {
+    width: 100%;
+    position: relative;
+    box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px;
+    box-sizing: border-box;
+    gap: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #6a4874;
+    font-family: 'SF Pro Text';
+}
