@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { getMockDeliveries, getMockBoxes } from "./services/api";
+import { getDeliveries } from "./services/api";
 
 // Components
 import HeadContainer from "./components/HeadContainer";
@@ -14,24 +14,33 @@ const App = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+
     const fecthData = async () => {
 
       try {
-        const mockBoxes = await getMockBoxes();
-        const mockDeliveries = await getMockDeliveries();
-        setDeliveries(mockDeliveries);
-        setBoxes(mockBoxes); 
-      } catch (error) {
-        setError("Error loading data")
-      }
+        
+        const deliveries = await getDeliveries();
+        setDeliveries(deliveries);
 
+      } catch (error) {
+        setError("Error loading deliveries")
+      }
     };
     fecthData();
+
   }, []);
 
-  const handleSync = () => {
-
-    console.log("Syncing data...")
+  const handleSync = async () => {
+    try {
+      
+      const deliveries = await getDeliveries();
+      setDeliveries(deliveries);
+      console.log("Synced data successfully 👌");
+      
+    } catch (error) {
+      console.log("Error sycing data", error.message);
+      setError("Error sycing data");
+    }
   };
 
   const handleAdd = () => {
@@ -41,11 +50,11 @@ const App = () => {
         id: deliveries.length + 1,
         userName: name,
         date: new Date().toLocaleDateString(),
-        totalBoxes: Math.floor(Math.random() * 10) + 1,
+        totalBoxes: 0,
       };
       setDeliveries((prev) => [...prev, newDelivery]);
     }
-    console.log("Adding new delivery...")
+    console.log(`Adding new delivery 🚛✨ ${name}`)
   };
   
   if (error) {

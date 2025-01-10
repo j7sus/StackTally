@@ -1,3 +1,47 @@
+@media (max-width: 768px) {
+    .frameWrapper {
+        padding: 6px 12px; /* Reduce el padding */
+        border-radius: 20px; /* Bordes más redondeados */
+    }
+
+    .qrCodeScanner24dp5f6368Fi {
+        width: 36px;
+        height: 36px;
+        padding: 6px; /* Reduce el tamaño del botón */
+    }
+}
+
+@media (max-width: 480px) {
+    .frameWrapper {
+        font-size: 12px; /* Tamaño de texto más pequeño */
+    }
+}
+
+@media (max-width: 428px) {
+    .frameWrapper {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .qrCodeScanner24dp5f6368Fi {
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 375px) {
+    .frameWrapper {
+        padding: 2px 6px;
+        font-size: 11px;
+    }
+
+    .qrCodeScanner24dp5f6368Fi {
+        width: 28px;
+        height: 28px;
+        padding: 2px;
+    }
+}
 
 .boxNumber {
     width: 210px;

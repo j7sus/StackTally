@@ -1,3 +1,48 @@
+@media (max-width: 768px) {
+    .buttons {
+        height: 40px; /* Reduce la altura */
+        padding: 8px 16px; /* Reduce el padding */
+    }
+
+    .buttonssecondary {
+        height: 40px; /* Reduce la altura */
+        padding: 8px 16px; /* Reduce el padding */
+    }
+
+    .buttonssecondaryParent {
+        gap: 12px; /* Reduce el espacio entre botones */
+        padding: 8px; /* Ajusta el padding del contenedor */
+    }
+}
+
+@media (max-width: 480px) {
+    .buttons {
+        height: 36px;
+        font-size: 12px; /* Texto más pequeño */
+    }
+
+    .buttonssecondary {
+        height: 36px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 428px) {
+    .buttonssecondary, .buttons {
+        height: 36px;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    .buttonssecondary, .buttons {
+        height: 32px;
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
+
 .package224dp5f6368Fill0WgIcon {
     width: 24px;
     position: relative;

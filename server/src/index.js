@@ -1,10 +1,12 @@
 import express from "express";
 import deliveriesRoutes from "./routes/Router.js";
 import connectDB from "./models/db.js";
-import boxesRoutes from "./routes/RouterBox.js"
+import boxesRoutes from "./routes/RouterBox.js";
+import cors from "cors";
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 connectDB()

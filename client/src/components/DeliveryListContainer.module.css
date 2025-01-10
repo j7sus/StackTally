@@ -1,3 +1,28 @@
+@media (max-width: 768px) {
+    .frameWrapper {
+        width: 90%; /* Ocupa la mayor parte de la pantalla */
+    }
+
+    .frameDiv {
+        width: 90%; /* Reduce el ancho del contenedor */
+        padding: 6px; /* Ajusta el padding */
+    }
+
+    .instanceParent {
+        gap: 8px; /* Reduce el espaciado */
+    }
+}
+
+@media (max-width: 480px) {
+    .frameWrapper {
+        width: 100%; /* Ocupa todo el ancho */
+    }
+
+    .pr666H6528Oval {
+        font-size: 10px; /* Texto más pequeño */
+    }
+}
+
 .package224dp5f6368Fill0WgIcon {
     width: 16px;
     position: relative;
