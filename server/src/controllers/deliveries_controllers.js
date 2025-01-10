@@ -10,11 +10,12 @@ export const getDeliveries =  async (req, res) => {
 };
 
 export const createDelivery =  async (req, res) => {
+    const { userName, date } = req.body;
     try {
-        const { userName, date } = req.body;
-        const newDelivery = await Delivery.create({ userName, date });
-        res.status(201).json(newDelivery);
+        const delivery = new Delivery({ userName, date });
+        const savedDelivery = await  delivery.save();
+        res.status(201).json(savedDelivery);
     } catch (error) {
-        res.status(500).json({ error: "Failed to create delivery" });
+        res.status(400).json({ error: "Failed to save delivery" });
     }
 };

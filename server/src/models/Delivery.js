@@ -1,20 +1,19 @@
-import { DataTypes } from 'sequelize';
-import sequelize from "./db.js";
+import mongoose from 'mongoose';
 
-const Delivery = sequelize.define("Delivery", {
+const deliverySchema = new mongoose.Schema({
     userName: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: String,
+        require: true,
     },
     date: {
-        type: DataTypes.DATE,
-        allowNull: false,
+        type: Date,
+        require: true,
     },
     totalBoxes: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0,
+        type: Number,
+        default: 0,
     },
 });
 
+const Delivery = mongoose.model("Delivery", deliverySchema);
 export default Delivery;
-// https://sequelize.org/docs/v7/models/data-types/

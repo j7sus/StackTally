@@ -1,26 +1,17 @@
 import "dotenv/config";
-import { Sequelize } from "sequelize";
+import mongoose from "mongoose";
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-        dialect: "postgres",
-        logging: console.log,
-});
-
-
-// Sync DataBase
-const syncDataBase = async () => {
-    // Testing the connection
+const connectDB = async () => {
     try {
-        console.log("Connecting to database...")
-        await sequelize.authenticate();
-        console.log("Database connectd!");
-        await sequelize.sync({force: true});
-        console.log("Database Synchronized!!")
-    } catch (error) {
-        console.error("Database failed", error);
-    }
+        const conn = await mongoose.connect(process.env.MONGO_URI, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+        });
+        console.log(`Connected to MongoDB ⚡️🔌 => ${conn.connection.host}`);
+      } catch (err) {
+        console.error(`Not connecting to MongoDB: ${err.message}`);
+        process.exit(1);
+      }
 };
 
-syncDataBase();
-
-export default sequelize;
+export default connectDB;

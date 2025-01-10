@@ -1,32 +1,30 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("./db");
-const Box = require("./Box");
+import mongoose from "mongoose";
 
-const Item = sequelize.define("Item", {
+const itemSchema = new mongoose.Schema({
     barcode: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: String,
+        require: true,
     },
     style: {
-        type: DataTypes.STRING,
+        type: String,
     },
     item: {
-        type: DataTypes.STRING,
+        type: String,
     },
     color: {
-        type: DataTypes.STRING,
+        type: String,
     },
     description: {
-        type: DataTypes.STRING,
+        type: String,
     },
     size: {
-        type: DataTypes.STRING
+        type: String
+    },
+    box: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Box"
     },
 });
 
-// Boxes Items
-Item.belongsTo(Box, { foreignKey: "boxId" });
-Box.hasMany(Item, { foreignKey: "boxId" });
-// https://sequelize.org/docs/v7/associations/belongs-to/
-
+const Item = mongoose.model("Item", itemSchema);
 export default Item;

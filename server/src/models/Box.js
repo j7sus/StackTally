@@ -1,25 +1,23 @@
-import { DataTypes } from "sequelize";
-import sequelize from "./db.js";
-import Delivery from "./Delivery.js";
+import mongoose from "mongoose";
 
-const Box = sequelize.define("Box", {
+const BoxSchema = new mongoose.Schema({
     boxNumber: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: String,
+        require: true,
     },
     store: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: String,
+        require: true,
     },
     totalItems: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0,
+        type: Number,
+        default: 0,
+    },
+    delivery: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Delivery"
     },
 });
 
-// Delivery Boxes
-Box.belongsTo(Delivery, { foreignKey: "deliveryId" });
-Delivery.hasMany(Box, { foreignKey: "deliveryId"});
-// https://sequelize.org/docs/v7/associations/belongs-to/
-
+const Box = mongoose.model("Box", BoxSchema);
 export default Box;
