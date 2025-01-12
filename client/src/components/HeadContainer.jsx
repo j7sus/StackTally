@@ -12,7 +12,19 @@ import { Container } from "@mui/material";
 const HeadContainer = () => {
     return (
         // Head Container
+		<div className={styles.head}>
+
         <div className={styles.frameParent}>
+			
+			<div className={styles.logoContainer}>
+				<div className={styles.logos}>
+					<img  src="/src/assets/Icons/StackTally logo.svg" alt="logo" />
+					<img  src="src/assets/Icons/Stack Tally nameLogo.svg" alt="logo" />
+				</div>
+
+			<div className={styles.bar}>
+
+
 
             {/* Seatch Bar */}
       			<div className={styles.frameWrapper}>
@@ -28,7 +40,16 @@ const HeadContainer = () => {
       			<div className={styles.qrCodeScanner24dp5f6368Fi}>
         				<img className={styles.vectorIcon} alt="" src="src/assets/Icons/scan icon.svg" />
       			</div>
-    	</div>
+			</div>
+			</div>
+			
+
+			
+
+
+    	
+			</div>
+		</div>
     );
 };
 

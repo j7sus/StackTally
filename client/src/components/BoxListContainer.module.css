@@ -47,6 +47,7 @@ button {
     box-sizing: border-box;
 }
 .frameParent {
+    width: 300px;
     align-self: stretch;
     display: flex;
     flex-direction: row;

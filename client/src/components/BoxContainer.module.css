@@ -1,3 +1,11 @@
+.boxListContainer {
+    width: 100%; /* Siempre ocupa todo el ancho */
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
 .vectorIcon {
     width: 13.3px;
     position: relative;

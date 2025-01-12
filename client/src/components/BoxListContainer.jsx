@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./BoxListContainer.module.css"
 import ItemsContainer from "./ItemsContainer"
+import { useCollapse } from "react-collapsed";
 
 
 
@@ -10,6 +11,8 @@ const BoxListConatiner = ({ initialBoxes = [] }) => {
   const [totalBoxes, setTotalBoxes] = useState(initialBoxes.length);
   const [boxCounter, setBoxCounter] = useState(initialBoxes.length);
   const [expanded, setExpanded] = useState(false);
+  
+  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse;
   
   const toggleExpand = () => {
     setExpanded((prev) => !prev);
@@ -50,8 +53,8 @@ const BoxListConatiner = ({ initialBoxes = [] }) => {
 
   };
 
-
-
+  
+  
 
   	
   
@@ -65,7 +68,7 @@ const BoxListConatiner = ({ initialBoxes = [] }) => {
           					<div className={styles.div}>{totalBoxes}</div>
 
         				</div>
-        				<div className={styles.karina}>Karina</div>
+        				<div className={styles.karina}></div>
         				<button 
                 className={styles.qrCodeScanner24dp5f6368Fi}
                 onClick={(e) => {
@@ -77,6 +80,7 @@ const BoxListConatiner = ({ initialBoxes = [] }) => {
         				</button>
       </div>
       {/* end */}
+
       {expanded && (
 
         <div className={styles.instanceParent}>
@@ -105,9 +109,3 @@ const BoxListConatiner = ({ initialBoxes = [] }) => {
 };
 
 export default BoxListConatiner;
-
-
-
-
-
-
