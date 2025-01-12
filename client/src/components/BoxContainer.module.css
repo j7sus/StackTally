@@ -1,0 +1,67 @@
+.vectorIcon {
+    width: 13.3px;
+    position: relative;
+    height: 12px;
+}
+.vectorWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.span {
+    font-weight: 600;
+}
+.bcn1 {
+    font-weight: 300;
+    color: #949494;
+}
+.bcn {
+    position: relative;
+}
+.bcnWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.x3 {
+    position: relative;
+    font-weight: 600;
+    text-align: left;
+}
+.frameGroup {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.pr666H6528Oval {
+    position: relative;
+    font-weight: 100;
+}
+.pr666H6528OvalD95Wrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.frameParent {
+    width: 100%;
+    position: relative;
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    gap: 16px;
+    text-align: center;
+    font-size: 12px;
+    color: #242424;
+    font-family: 'SF Pro';
+}

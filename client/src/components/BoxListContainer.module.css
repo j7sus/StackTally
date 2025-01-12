@@ -1,0 +1,115 @@
+button {
+    border-color: #6a4975;
+}
+.package224dp5f6368Fill0WgIcon {
+    width: 16px;
+    position: relative;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.div {
+    position: relative;
+    font-weight: 600;
+}
+.package224dp5f6368Fill0WgParent {
+    width: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+}
+.karina {
+    position: relative;
+    color: #949494;
+}
+.qrCodeScanner24dp5f6368FiIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.qrCodeScanner24dp5f6368Fi {
+    width: 40px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    background-color: #fff;
+    height: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.frameParent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.span {
+    font-weight: 600;
+}
+.bcn1 {
+    font-weight: 300;
+    color: #949494;
+}
+.bcn {
+    position: relative;
+}
+.bcnWrapper {
+    width: 85px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.x34 {
+    position: relative;
+    font-weight: 600;
+    text-align: left;
+}
+.frameWrapper {
+    width: 310px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: #fcfcfd;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8px 16px;
+    box-sizing: border-box;
+}
+.instanceParent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    text-align: center;
+    font-size: 12px;
+}
+.property1boxes {
+    width: 100%;
+    position: relative;
+    background: linear-gradient(180deg, #f4e8f4, #eeedef);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8px 24px 16px;
+    box-sizing: border-box;
+    gap: 16px;
+    text-align: left;
+    font-size: 14px;
+    color: #242424;
+    font-family: 'SF Pro';
+}
+

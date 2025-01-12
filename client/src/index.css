@@ -44,6 +44,45 @@ body {
     border: none;
 }
 
+/* Contenedor principal que ocupa toda la pantalla */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa la altura total de la ventana */
+    overflow: hidden; /* Previene el scroll global */
+}
+
+/* Encabezado fijo */
+.head-container {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    /* padding: 16px; */
+}
+
+/* Área scrollable */
+.delivery-list-container {
+    flex: 1; /* Ocupa el espacio restante */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    /* padding: 16px;
+    background-color: #f9f9f9; */
+}
+
+/* Pie fijo */
+.foot-container {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background-color: #fff;
+    /* box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); */
+    /* padding: 16px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 15px;

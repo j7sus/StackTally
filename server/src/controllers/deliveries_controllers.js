@@ -10,15 +10,12 @@ export const getDeliveries =  async (req, res) => {
     }
 };
 
-export const createDelivery =  async (req, res) => {
-    const { userName, date } = req.body;
+export const addDelivery =  async (req, res) => {
+    const { userName, date, totalBoxes } = req.body;
     try {
-        // New delivery
-        const delivery = new Delivery({ userName, date });
-        const savedDelivery = await  delivery.save();
-        
-        res.status(201).json(savedDelivery);
-    } catch (error) {
-        res.status(400).json({ error: "Failed to save delivery" });
-    }
+        const newDelivery = await Delivery.create({ userName, date, totalBoxes });
+        res.status(201).json({ message: "Delivery created successfully!", delivery: newDelivery });
+      } catch (error) {
+        res.status(500).json({ error: "Failed to create delivery", details: error.message });
+      }
 };

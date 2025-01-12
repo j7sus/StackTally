@@ -20,13 +20,13 @@ const HeadContainer = () => {
           					<div className={styles.boxNumberItemNumberWrapper}>
             						<div className={styles.boxNumber}>Box number / item number</div>
           					</div>
-          					<img className={styles.icons24search} alt="" src="src/assets/Icons/search.svg" />
+          					<img className={styles.icons24search} alt="" src="src/assets/Icons/search icon.svg" />
         				</div>
       			</div>
                 
             {/* Scan Button */}
       			<div className={styles.qrCodeScanner24dp5f6368Fi}>
-        				<img className={styles.vectorIcon} alt="" src="src/assets/Icons/Vector.svg" />
+        				<img className={styles.vectorIcon} alt="" src="src/assets/Icons/scan icon.svg" />
       			</div>
     	</div>
     );

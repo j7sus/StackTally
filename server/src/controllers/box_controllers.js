@@ -19,9 +19,15 @@ export const createBox = async (req, res) => {
 
 export const getItemsByBox = async (req, res) => {
     try {
-        const { boxId } = req.params;
+        const { boxNumber } = req.params;
 
-        const items = await Item.find({ box: boxId}).populate("box");
+        // Search for box
+        const box = await Box.findOne({ boxNumber });
+        if (!box) {
+            return res.status(404).json({ error: "Box not found 🤷"})
+        }
+        // Search for item
+        const items = await Item.find({ box: boxNumber}).populate("box");
         if (!items || items.length === 0) {
             return res.status(404).json({ error: "No Items"})
         }
