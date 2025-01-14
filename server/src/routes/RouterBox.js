@@ -4,6 +4,6 @@ import { getItemsByBox } from "../controllers/box_controllers.js";
 const router = express.Router();
 
 router.post("/", createBox);
-router.get("/:boxNumber/items", getItemsByBox)
+router.get("/:numberBox/items", getItemsByBox)
 
 export default router;

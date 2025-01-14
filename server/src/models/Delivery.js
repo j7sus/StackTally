@@ -13,6 +13,12 @@ const deliverySchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    boxes: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Box", // Nombre del modelo relacionado
+        },
+    ],
 });
 
 const Delivery = mongoose.model("Delivery", deliverySchema);

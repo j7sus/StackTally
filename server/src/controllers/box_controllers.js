@@ -3,10 +3,10 @@ import Item from "../models/Item.js"
 
 export const createBox = async (req, res) => {
     try {
-        const { boxNumber, store, totalItems, delivery } = req.body;
-        console.log("Creating box with data:", { boxNumber, store, totalItems, delivery });
+        const { numberBox, store, totalItems, delivery } = req.body;
+        console.log("Creating box with data:", { numberBox, store, totalItems, delivery });
         // New Box
-        const box = new Box({ boxNumber, store, totalItems, delivery});
+        const box = new Box({ numberBox, store, totalItems, delivery});
         const savedBox =await box.save();
         console.log("Box saved:", savedBox);
 
@@ -19,15 +19,15 @@ export const createBox = async (req, res) => {
 
 export const getItemsByBox = async (req, res) => {
     try {
-        const { boxNumber } = req.params;
+        const { numberBox } = req.params;
 
         // Search for box
-        const box = await Box.findOne({ boxNumber });
+        const box = await Box.findOne({ numberBox });
         if (!box) {
             return res.status(404).json({ error: "Box not found 🤷"})
         }
         // Search for item
-        const items = await Item.find({ box: boxNumber}).populate("box");
+        const items = await Item.find({ box: numberBox}).populate("box");
         if (!items || items.length === 0) {
             return res.status(404).json({ error: "No Items"})
         }

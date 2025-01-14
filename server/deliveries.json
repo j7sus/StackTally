@@ -1,0 +1,62 @@
+[
+    {
+        "userName": "Ruud",
+        "date": "2025-01-13T00:00:00Z",
+        "boxes": [
+            {
+                "numberBox": "7028051",
+                "items": [
+                    { "barcode": "805505524", "description": "AIRSPEED", "size": 42 },
+                    { "barcode": "805505525", "description": "AIRSPEED", "size": 43 }
+                ]
+            },
+            {
+                "numberBox": "7028052",
+                "items": [
+                    { "barcode": "805138565", "description": "OVAL", "size": 95 },
+                    { "barcode": "805899289", "description": "OVAL", "size": 80 }
+                ]
+            }
+        ]
+    },
+    {
+        "userName": "Marcello",
+        "date": "2025-01-13T00:00:00Z",
+        "boxes": [
+            {
+                "numberBox": "7028053",
+                "items": [
+                    { "barcode": "805138528", "style": "Y02801", "color": "H8991", "description": "MAYEMI", "size": 46 },
+                    { "barcode": "805505527", "style": "Y02985", "color": "T9002", "description": "VENUS", "size": 41 },
+                    { "barcode": "805899251", "style": "Y03336", "color": "T8013", "description": "LEROJI", "size": 41 },
+                    { "barcode": "805505523", "style": "Y03407", "color": "T1001", "description": "UKIYO", "size": 43 }
+                ]
+            },
+            {
+                "numberBox": "7028054",
+                "items": [
+                    { "barcode": "805138565", "style": "X08726", "color": "H6528", "description": "OVAL", "size": 100 },
+                    { "barcode": "805899289", "style": "X10133", "color": "T8013", "description": "OVAL", "size": 80 },
+                    { "barcode": "805899289", "style": "X10133", "color": "T8013", "description": "OVAL", "size": 85 }
+                ]
+            }
+        ]
+    },
+    {
+        "userName": "Gerard",
+        "date": "2025-01-13T00:00:00Z",
+        "boxes": [
+            {
+                "numberBox": "7028055",
+                "items": [
+                    { "barcode": "805138528", "style": "Y02801", "color": "H8991", "description": "MAYEMI", "size": 46 },
+                    { "barcode": "805505527", "style": "Y02985", "color": "T9002", "description": "VENUS", "size": 41 },
+                    { "barcode": "805899251", "style": "Y03336", "color": "T8013", "description": "LEROJI", "size": 41 },
+                    { "barcode": "805505523", "style": "Y03407", "color": "T1001", "description": "UKIYO", "size": 43 },
+                    { "barcode": "805505524", "style": "Y03436", "color": "HA403", "description": "AIRSPEED", "size": 42 },
+                    { "barcode": "805505524", "style": "Y03436", "color": "HA403", "description": "AIRSPEED", "size": 43 }
+                ]
+            }
+        ]
+    }
+]

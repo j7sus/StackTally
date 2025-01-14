@@ -12,7 +12,7 @@ const types = gql`
 # Represents a box, which is linked to a delivery and can contain items
     type Box {
         id: ID!
-        boxNumber: String!
+        numberBox: String!
         store: String!
         totalItems: Int!
         delivery: Delivery
@@ -41,7 +41,7 @@ const types = gql`
             date: String!,
             totalBoxes: Int!): Delivery
         addBox(
-            boxNumber: String!,
+            numberBox: String!,
             store: String!,
             deliveryId: ID!): Box
         assignItemToBoxes(

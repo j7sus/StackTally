@@ -9,12 +9,17 @@ const formatDate = (dateString) => {
 };
 
 const DeliveryListContainer = ({ deliveries, toggleDeliveryItems }) => {
+  
+  if (!Array.isArray(deliveries) || deliveries.length === 0) {
+    return <div>No deliveries available</div>;
+  }
+  
   return (
 	
     <div className={styles.frameParent}>
 		
-		{/* Head DaliveryListContainer */}
-		<div className={styles.frameContainer}>
+		    {/* Head DaliveryListContainer */}
+		    <div className={styles.frameContainer}>
                             <div className={styles.february2025Wrapper}>
                                     <div className={styles.february2025}>January 2025</div>
                             </div>
@@ -27,24 +32,21 @@ const DeliveryListContainer = ({ deliveries, toggleDeliveryItems }) => {
 
 
       {deliveries.map((delivery) => (
-		  <div
-        //   key={delivery.id || delivery._id}
-        //   className={`${styles.frameWrapper14}`}
-        >
-		<div className={styles.frameParent}>
+        <div
+          //   key={delivery.id || delivery._id}
+          //   className={`${styles.frameWrapper14}`}
+          >
+        <div className={styles.frameParent}>
 
-          <div className={styles.frameContainer}>
-            <span>{delivery.userName}</span>
-            <span>{formatDate(delivery.date)}</span>
+            <div className={styles.frameContainer}>
+              <span>{delivery.userName}</span>
+              <span>{formatDate(delivery.date)}</span>
+        </div>
 		  </div>
-		</div>
 			
 		<div >
-          <BoxListContainer
-		  
-            isExpanded={delivery.expanded}
-            boxes={delivery.boxes}
-          />
+    <BoxListContainer initialBoxes={delivery.boxes || []} />
+          
 		</div>
           
         </div>

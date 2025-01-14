@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const BoxSchema = new mongoose.Schema({
-    boxNumber: {
+    numberBox: {
         type: String,
         require: true,
     },

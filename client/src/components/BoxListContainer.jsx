@@ -6,7 +6,7 @@ import { useCollapse } from "react-collapsed";
 
 
 const BoxListConatiner = ({ initialBoxes = [] }) => {
-  const [boxes, setBoxes] = useState(initialBoxes);
+  const [boxes, setBoxes] = useState(Array.isArray(initialBoxes) ? initialBoxes : []);
   const [items, setItems] = useState([]);
   const [totalBoxes, setTotalBoxes] = useState(initialBoxes.length);
   const [boxCounter, setBoxCounter] = useState(initialBoxes.length);
@@ -18,35 +18,55 @@ const BoxListConatiner = ({ initialBoxes = [] }) => {
     setExpanded((prev) => !prev);
   };
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchItems = async () => {
       try {
-        const boxNumbers = boxes.map((box) => box.boxNumber);
-
-        for (const boxNumber of boxNumbers) {
-          const response = await fetch(`/api/boxes/${boxNumber}/items`);
-          if (!response.ok) {
-            throw new Error(`Failed to fetch items for box ${boxNumber}`);
-          }
-          const data = await response.json();
-          setItems((prevItems) => [...prevItems, ...data.items]);
+        if (!Array.isArray(boxes) || boxes.length === 0) {
+          console.warn("No boxes available to fetch items.");
+          return;
         }
+  
+        const boxNumbers = boxes.map((box) => box.numberBox);
+  
+        // Procesar solicitudes en paralelo
+        const itemRequests = boxNumbers.map((boxNumber) =>
+          fetch(`/api/boxes/${boxNumber}/items`).then((response) => {
+            if (!response.ok) {
+              throw new Error(`Failed to fetch items for box ${boxNumber}`);
+            }
+            return response.json();
+          })
+        );
+  
+        // Obtener todos los datos
+        const itemsData = await Promise.all(itemRequests);
+  
+        // Combinar todos los ítems en un solo arreglo
+        const allItems = itemsData.flatMap((data) => data.items || []);
+        setItems((prevItems) => [...prevItems, ...allItems]);
+  
+        console.log("Items fetched successfully:", allItems);
       } catch (error) {
-        console.error("Error fetching items:");
+        console.error("Error fetching items:", error.message);
       }
     };
-
-    if (boxes && boxes.length > 0) {
-      fetchItems();
-    }
+  
+    fetchItems();
   }, [boxes]);
 
   const handleAddBox = () => {
     const newBoxNumber = `702806${ boxCounter + 1}`;
+    
+    if (boxes.some((box) => box.numberBox === newBoxNumber)) {
+      console.error(`Box with number ${newBoxNumber} already exists.`);
+      return;
+    }
+
     const newBox = {
       numberBox: newBoxNumber, // Generate unique boxNumber
       items: [],
     };
+
     setBoxes((prevBoxes) => [...prevBoxes, newBox]);
     setTotalBoxes((prevTotal) => prevTotal + 1);
     setBoxCounter((prevCounter) => prevCounter + 1);
@@ -86,14 +106,17 @@ const BoxListConatiner = ({ initialBoxes = [] }) => {
         <div className={styles.instanceParent}>
             {boxes && boxes.length > 0 ? (
               boxes.map((box, index) => (   
-                <div key={box.boxNumber} className={styles.frameWrapper}>
+                <div key={box.numberBox || index} className={styles.frameWrapper}>
+                        
                           <div className={styles.boxHeader}></div>
+                          
 
                         <ItemsContainer
                           key={box.numberBox} 
                           numberBox={box.numberBox}
+                          boxId={box.id}
                           // boxNumber={box.boxNumber}
-                          items={items}
+                          // items={items}
                           />
                         </div>
                   ))

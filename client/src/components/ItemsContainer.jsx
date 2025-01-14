@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ItemsContainer.module.css';
 
+import { getItems } from '../services/api';
+import { useEffect } from 'react';
 
-const ItemsContainer = ({ items, numberBox }) => {
+
+const ItemsContainer = ({ numberBox, boxId }) => {
+	const [items, setItems] = useState([]);
+	const [error, setError] = useState(null);
+
+	useEffect(() => {
+		const fetchedItems = async () => {
+			try {
+				const fetchedItems = await getItems(boxId);
+				setItems(fetchedItems)
+			} catch (error) {
+				setError("Failed to load items")
+			};
+	
+			if (boxId) {
+				fetchedItems();
+			}
+		}
+	}, [boxId]);
+
+	if (error) {
+		return <div className={styles.error}>{error}</div>;
+	}
 
 	return (
     		<div className={styles.property1frameProperty2p}>
@@ -18,7 +42,7 @@ const ItemsContainer = ({ items, numberBox }) => {
             						<span className={styles.bcn1}> - BCN</span>
           					</div>
         				</div>
-        				<div className={styles.x3}>x3</div>
+        				<div className={styles.x3}>{items.length}</div>
       			</div>
 
 

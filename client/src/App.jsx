@@ -1,6 +1,6 @@
 import './App.css'
 import React, { useEffect, useState} from 'react';
-import { getDeliveries } from "./services/api";
+import { getDeliveries, syncBoxItems } from "./services/api";
 
 // Components
 import HeadContainer from "./components/HeadContainer";
@@ -8,38 +8,56 @@ import DeliveryListContainer from "./components/DeliveryListContainer";
 import FootContainer from "./components/FootContainer"
 
 
+
 const App = () => {
   const [deliveries, setDeliveries] = React.useState([]);
-  const [boxes, setBoxes] = useState([]);
   const [error, setError] = useState(null);
+  const [filteredDeliveries, setFilteredDeliveries] = useState([]);
 
   useEffect(() => {
 
-    const fecthData = async () => {
-
+    const fetchData = async () => {
       try {
-        
         const deliveries = await getDeliveries();
-        setDeliveries(deliveries);
-
+        setDeliveries(deliveries); // Actualiza el estado con los datos de la API
+        console.log('Deliveries fetched:', deliveries);
       } catch (error) {
-        setError("Error loading deliveries")
+        console.error("Error loading deliveries:", error.message);
+        setError("Error loading deliveries.");
       }
     };
-    fecthData();
-
+  
+    fetchData();
   }, []);
 
   const handleSync = async () => {
     try {
-      
-      const deliveries = await getDeliveries();
-      setDeliveries(deliveries);
-      console.log("Synced data successfully 👌");
+      if (!Array.isArray(deliveries)) {
+        throw new Error("Deliveries data is not VALID");
+      }
+
+      const updatedDeliveries = await Promise.all(
+        deliveries.map(async (delivery) => {
+          const boxes = Array.isArray(delivery.boxes) ? delivery.boxes : [];
+          
+          const updatedBoxes = await Promise.all(
+            delivery.boxes.map(async (box) => {
+
+              const syncedItems = await syncBoxItems(box.id); //sync
+              return { ...box, items: syncedItems };
+            })
+          );
+          // Devuelve delivery actualizado
+          return { ...delivery, boxes: updatedBoxes };
+        })
+      );
+
+      setDeliveries(updatedDeliveries);
+      console.log("Data Synced Successfully 👌");
       
     } catch (error) {
-      console.log("Error sycing data", error.message);
-      setError("Error sycing data");
+      console.log("Error sycing data :(", error.message);
+      setError("Error sycing data :(");
     }
   };
 
@@ -76,7 +94,7 @@ const App = () => {
 
   
   if (error) {
-    return <div>Error {error}</div>;
+    return <div>{error}</div>;
   }
 
   const handleScan = (deliveryId) => {
@@ -85,7 +103,7 @@ const App = () => {
         if (delivery.id === deliveryId) {
           const newBox = {
             id: delivery.boxes.length + 1,
-            boxNumber: `Box ${delivery.boxes.length + 1}`,
+            numberBox: `Box ${delivery.boxes.length + 1}`,
             items: [], // Items pueden ser agregados más tarde
           };
           return {
@@ -102,10 +120,33 @@ const App = () => {
   const toggleDeliveryItems = (id) => {
     setDeliveries((prevDeliveries) =>
       deliveries.map((delivery) =>
-        delivery.id === id ? { ...delivery, expanded: !delivery.expanded } : delivery
+        delivery.id === id 
+          ? { ...delivery, expanded: !delivery.expanded } : delivery
       )
     );
   };
+
+  const handleSearch = (term) => {
+    if (!term) {
+      setFilteredDeliveries(deliveries); // Restablece todas las entregas si no hay término de búsqueda
+      return;
+    }
+
+    const filtered = deliveries.map((delivery) => {
+      const filteredBoxes = delivery.boxes.filter(
+        (box) =>
+          box.numberBox.includes(term) || // Busca por número de caja
+          box.items.some((item) => item.barcode.includes(term)) // Busca por ítem
+      );
+
+      return filteredBoxes.length > 0
+        ? { ...delivery, boxes: filteredBoxes }
+        : null;
+    }).filter(Boolean); // Elimina las entregas sin cajas coincidentes
+
+    setFilteredDeliveries(filtered);
+  };
+
 
   return (
     <>
@@ -113,28 +154,26 @@ const App = () => {
       <div className='app-container'>
 
         <div className='head-container'>
-        <HeadContainer/>
+          <HeadContainer onSearch={handleSearch}/>
         </div>
 
-        <div className='delivery-list-container'>
-        
-        <DeliveryListContainer 
-        deliveries={deliveries}
-        handleScan={handleScan}
-        toggleDeliveryItems={toggleDeliveryItems}
-        
-        />
+        <div className='delivery-list-container'>       
+          <DeliveryListContainer 
+          deliveries={deliveries}
+          handleScan={handleScan}
+          toggleDeliveryItems={toggleDeliveryItems} 
+          />
         </div>
 
         <div className='foot-container'>
-        <FootContainer onSync={handleSync} onAdd={handleAdd} />
+          <FootContainer onSync={handleSync} onAdd={handleAdd} />
         </div>
 
       </div>
 
     </>
-  )
-}
+  );
+};
 
 export default App
 
