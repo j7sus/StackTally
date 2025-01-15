@@ -1,6 +1,6 @@
 <div align="center">
   <h1> StackTally </h1>
-  <img src="./src/StackTallyLogo.png" width="150" alt="StackTally logo">
+  <img src="./src/assets/Icons/StackTallyLogo.png" width="150" alt="StackTally logo">
   <p>"Smart management for stacked items, find it fast, count it smarter."<p>
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blueviolet.svg)
