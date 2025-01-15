@@ -1,7 +1,7 @@
 <div align="center">
+  <img src="./client/src/assets/Icons/StackTally logo.svg" width="150" alt="StackTally logo">
   <h1> StackTally </h1>
-  <img src="./src/assets/Icons/StackTallyLogo.png" width="150" alt="StackTally logo">
-  <p>"Smart management for stacked items, find it fast, count it smarter."<p>
+  <h3>"Smart management for stacked items,<br/> find it fast, count it smarter."<h3>
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blueviolet.svg)
   
@@ -10,7 +10,7 @@
 [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
 [![Context API](https://img.shields.io/badge/contextapi-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/docs/context.html)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-
+</div>
 ## Prerequisites
 
 - [Node.js (v18.0.0 or higher)](https://nodejs.org/en/download/)
