@@ -1,10 +1,9 @@
 <div align="center">
-  <div
   <img src="./client/src/assets/Icons/StackTally logo.svg" width="150" alt="StackTally logo">
-    
   <h1> StackTally </h1>
-    
-  <h3><i>"Smart management for stacked items,<br/> find it fast, count it smarter."<h3></i></div>
+  
+<div        
+<h3><i>"Smart management for stacked items,<br/> find it fast, count it smarter."<h3></i></div>
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blueviolet.svg)
 
