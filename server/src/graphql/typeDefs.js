@@ -44,7 +44,7 @@ const types = gql`
             numberBox: String!,
             store: String!,
             deliveryId: ID!): Box
-        assignItemToBoxes(
+        assignItemsToBox(
             barcode: String!,
             boxIds: [ID!]!): Item
     }

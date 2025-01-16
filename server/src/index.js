@@ -24,7 +24,10 @@ connectDB()
 
 //Apollo Server
 const starApolloServer = async () => {
-    const server = new ApolloServer({typeDefs, resolvers});
+    const server = new ApolloServer({
+        typeDefs, 
+        resolvers
+    });
     await server.start();
     server.applyMiddleware({app});
     console.log("| APOLLO SERVER 🚀 initialized successfully! |");
@@ -42,3 +45,7 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`| SERVER 🏃✨ running on port  ${PORT} |`));
 
 export default app;
+
+
+
+
