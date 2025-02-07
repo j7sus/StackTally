@@ -16,9 +16,12 @@ const HeadContainer = ({ onSearch }) => {
     <div className={styles.head}>
       <div className={styles.frameParent}>
         <div className={styles.logoContainer}>
-          
-		  <div className={styles.logos}>
-            <img id="logos" src="/src/assets/Icons/StackTally logo.svg" alt="logo" />
+          <div className={styles.logos}>
+            <img
+              id="logos"
+              src="/src/assets/Icons/StackTally logo.svg"
+              alt="logo"
+            />
             <img src="src/assets/Icons/Stack Tally nameLogo.svg" alt="logo" />
           </div>
 

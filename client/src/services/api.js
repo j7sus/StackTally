@@ -120,4 +120,3 @@ export const syncBoxItems = async (boxId) => {
         throw error;
     }
 }
-

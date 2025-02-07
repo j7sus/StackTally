@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=SF+Pro:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@700&display=swap');
 
-/* Cuerpo general */
 body {
     font-family: 'SF Pro', sans-serif;
     font-size: 16px;
@@ -9,7 +8,6 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Contenedor de lista */
 .delivery-list-container {
     display: flex;
     flex-direction: column;
@@ -17,7 +15,6 @@ body {
     padding: 16px;
 }
 
-/* Elementos individuales */
 .delivery-container {
     display: flex;
     flex-direction: column;
@@ -28,7 +25,6 @@ body {
     font-size: 14px;
 }
 
-/* Botones */
 .buttons {
     display: flex;
     justify-content: space-around;
@@ -44,40 +40,32 @@ body {
     border: none;
 }
 
-/* Contenedor principal que ocupa toda la pantalla */
 .app-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Ocupa la altura total de la ventana */
-    overflow: hidden; /* Previene el scroll global */
+    height: 100vh;
+    overflow: hidden; 
 }
 
-/* Encabezado fijo */
 .head-container {
     position: sticky;
     top: 0;
     z-index: 10;
     background-color: #fff;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-    /* padding: 16px; */
 }
 
-/* Área scrollable */
+
 .delivery-list-container {
-    flex: 1; /* Ocupa el espacio restante */
-    overflow-y: auto; /* Habilita el scroll vertical */
-    /* padding: 16px;
-    background-color: #f9f9f9; */
+    flex: 1;
+    overflow-y: auto;
+
 }
 
-/* Pie fijo */
 .foot-container {
     position: sticky;
     bottom: 0;
     z-index: 10;
     background-color: #fff;
-    /* box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); */
-    /* padding: 16px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,11 +75,9 @@ body {
     body {
         font-size: 15px;
     }
-
     .delivery-container {
         padding: 12px;
     }
-
     .button {
         font-size: 13px;
         padding: 10px;
@@ -103,12 +89,10 @@ body {
     body {
         font-size: 14px;
     }
-
     .delivery-container {
         padding: 8px;
         font-size: 12px;
     }
-
     .button {
         font-size: 12px;
         padding: 8px;
@@ -120,12 +104,10 @@ body {
         padding: 4px;
         gap: 6px;
     }
-
     .delivery-container {
         padding: 6px;
         font-size: 11px;
     }
-
     .buttons {
         padding: 4px 6px;
         font-size: 12px;
@@ -137,50 +119,43 @@ body {
         padding: 8px;
         gap: 8px;
     }
-
     .delivery-container {
         padding: 8px;
         font-size: 12px;
     }
-
     .buttons {
         padding: 6px 8px;
         font-size: 13px;
     }
 }
 
-/* Ajustes generales para pantallas más pequeñas */
+
 @media (max-width: 390px) { /* iPhone 12 Pro */
     .delivery-container {
         padding: 8px;
         font-size: 12px;
     }
-
     .buttons {
-        width: 100%; /* Asegura que los botones ocupen todo el ancho */
+        width: 100%;
         font-size: 14px;
     }
-
     .delivery-list-container {
         padding: 8px;
-        gap: 8px; /* Reduce el espacio entre elementos */
+        gap: 8px;
     }
-
     .head-container {
-        flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas */
+        flex-wrap: wrap;
     }
 }
 
-@media (max-width: 360px) { /* Samsung Galaxy S8+ */
+@media (max-width: 360px) {
     body {
         font-size: 13px;
     }
-
     .delivery-container {
         padding: 6px;
         font-size: 11px;
     }
-
     .buttons {
         padding: 6px 8px;
         font-size: 12px;
@@ -193,17 +168,14 @@ body {
         padding: 4px;
         font-size: 10px;
     }
-
     .buttons {
         font-size: 12px;
         padding: 6px 8px;
     }
-
     .delivery-list-container {
         gap: 4px;
         padding: 4px;
     }
-
     .head-container {
         flex-wrap: wrap;
         justify-content: center;
@@ -214,32 +186,30 @@ body {
     .delivery-list-container {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centra horizontalmente */
-        justify-content: flex-start; /* Alinea verticalmente al principio */
+        align-items: center; 
+        justify-content: flex-start;
         padding: 16px 32px;
-        gap: 16px; /* Espaciado entre elementos */
+        gap: 16px;
     }
-
     .delivery-container {
-        width: 80%; /* Ajusta el ancho al 80% del contenedor */
-        max-width: 600px; /* Ancho máximo para tablets */
+        width: 80%;
+        max-width: 600px; 
         padding: 16px;
         font-size: 16px;
-        margin: 0 auto; /* Asegura el centrado */
+        margin: 0 auto;
     }
 }
 
 @media (min-width: 1024px) { /* iPads horizontales y tablets grandes */
     .delivery-list-container {
         display: flex;
-        flex-wrap: wrap; /* Permite que los contenedores se alineen en filas */
-        justify-content: center; /* Centra horizontalmente */
-        gap: 24px; /* Más espacio entre filas */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
         padding: 24px 48px;
     }
-
     .delivery-container {
-        width: 45%; /* Dos elementos por fila en pantallas grandes */
+        width: 45%;
         max-width: 600px;
         padding: 20px;
         font-size: 18px;

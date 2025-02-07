@@ -9,7 +9,7 @@ import boxesRoutes from "./routes/RouterBox.js";
 import connectDB from "./models/db.js";
 
 //GraphQL
-import { ApolloServer } from "apollo-server-express"
+import { ApolloServer } from "apollo-server-express";
 import typeDefs from "./graphql/typeDefs.js";
 import resolvers from "./graphql/resolvers.js";
 
@@ -19,33 +19,39 @@ app.use(express.json());
 
 //Connect to the DataBase
 connectDB()
-.then(() => console.log("| Database connected SUCCESFULLY!👌 |"))
-.catch(err => console.error("Database connection failed:", err.message));
+  .then(() =>
+    console.log(
+      "| Database Connection > Storage secured 🗄️ ! All boxes and deliveries are now accounted for."
+    )
+  )
+  .catch((err) => console.error("Database connection failed:", err.message));
 
 //Apollo Server
 const starApolloServer = async () => {
-    const server = new ApolloServer({
-        typeDefs, 
-        resolvers
-    });
-    await server.start();
-    server.applyMiddleware({app});
-    console.log("| APOLLO SERVER 🚀 initialized successfully! |");
-}
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+  });
+  await server.start();
+  server.applyMiddleware({ app });
+  console.log(
+    "| APOLLO SERVER 📡 > Warp drive engaged! GraphQL is ready!! 🛰️ "
+  );
+};
 
 starApolloServer().catch((error) => {
-    console.error("Error initializing Apollo Server:", error.message);
+  console.error("Error initializing Apollo Server:", error.message);
 });
 
 //REST Routes
 app.use("/api/deliveries", deliveriesRoutes);
-app.use("/api/boxes", boxesRoutes)
+app.use("/api/boxes", boxesRoutes);
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`| SERVER 🏃✨ running on port  ${PORT} |`));
+app.listen(PORT, () =>
+  console.log(
+    `| SERVER ✨🚀 > StackTally HQ is live! 🌍  Operations on port ${PORT}!`
+  )
+);
 
 export default app;
-
-
-
-

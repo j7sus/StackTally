@@ -79,6 +79,7 @@ const BoxListConatiner = ({ initialBoxes = [] }) => {
   	
   
   return (
+    
     <div className={styles.property1boxes}>
 
       {/* Head BoxListContainer */}

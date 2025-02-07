@@ -3,8 +3,18 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.3.1",
+    "punycode": "^2.3.1",
     "quagga": "^0.12.1",
     "react-router-dom": "^7.1.1",
     "sequelize": "^6.3.5"
+  },
+  "scripts": {
+    "install-all": "npm install --prefix client && npm install --prefix server",
+    "start-client": "npm run dev --prefix client",
+    "start-server": "npm run dev --prefix server",
+    "dev": "NODE_OPTIONS=--no-deprecation concurrently \"npm run start-client\" \"npm run start-server\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }

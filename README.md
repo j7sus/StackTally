@@ -1,9 +1,8 @@
 <div align="center">
   <img src="./client/src/assets/Icons/StackTally logo.svg" width="150" alt="StackTally logo">
   <h1> StackTally </h1>
-  
-<div        
-<h3><i>"Smart management for stacked items,<br/> find it fast, count it smarter."<h3></i></div>
+
+  <h3><i>"Smart management for stacked items,<br/> find it fast, count it smarter."</i></h3>
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blueviolet.svg)
 
@@ -12,6 +11,7 @@
 [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
 [![Context API](https://img.shields.io/badge/contextapi-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/docs/context.html)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+
 </div>
 
 ## Prerequisites
@@ -22,21 +22,68 @@
 
 ## Installation
 
-### 1. Clone the Repository
+#### 1. **Clone the repository**
 
-```bash
-git clone https://github.com/your-username/stack-tally.git
+   ```bash
+   git clone [https://github.com/tu_usuario/tu_proyecto.git](https://github.com/tu_usuario/tu_proyecto.git)
+   cd stack-tally
+   ```
+#### 2. **Install dependencies**
 
-cd stack-tally
-```
+   ```bash
+   npm install
+   ```
 
-### 2. Server and Client setup
+#### 3. **Configure environment variables**
 
-In the project root directory, run the following command:
+  * Copy .env.example to .env
+  * Set MONGO_URI and other required credentials
 
-```bash
-npm run i
+#### 4. **Start the development server and client**
 
-cd client npm run dev
-cd server npm run dev
-```
+   ```bash
+   npm run dev
+   ```
+## Useful Scripts
+* `npm run install-all` → Install dependencies for both client and server
+* `npm run dev` → Start both client and server in development mode
+* `npm run start` → Start the server in production mode
+* `npm run seed` → Populate the database with test data
+* `npm test` → Run unit tests
+
+## Built With
+
+*   **Frontend:**
+    *   [React](https://reactjs.org/) - Used for building the dynamic user interface and managing components.
+    *   [CSS Modules](https://github.com/css-modules/css-modules) - Employed for styling components in a modular and maintainable way, preventing CSS conflicts.
+    *   [GraphQL](https://graphql.org/) - Used for querying and fetching data from the backend API efficiently.
+    *   [Figma](https://www.figma.com/) - Used for designing the user interface and creating prototypes for the StackTally application.
+
+*   **Backend:**
+    *   [Node.js](https://nodejs.org/) - The runtime environment for the server-side logic and API.
+    *   [Express.js](https://expressjs.com/) - The web framework used to create the REST API endpoints and handle requests.
+    *   [MongoDB](https://www.mongodb.com/) - The database used to store the application's data persistently.
+    *   [Mongoose](https://mongoosejs.com/) - Provides a structured way to interact with MongoDB, defining models and schemas.
+    *   [Apollo Server](https://www.apollographql.com/docs/apollo-server/) - The GraphQL server implementation, handling GraphQL queries and mutations.
+
+
+<div style="display: flex; justify-content: center; gap: 40px; padding: 20px">
+  <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-1-.gif" width="120">
+  <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-2-.gif" width="120">
+  <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-3-.gif" width="120">
+</div>
+
+*   **Other:**
+    *   [npm](https://www.npmjs.com/) - Used for managing project dependencies and running scripts.
+    *   [Git](https://git-scm.com/) - Used for version control and collaboration.
+    *   Love, lots of love ♥️
+
+## REST API
+   * Deliveries:
+
+     * GET /api/deliveries → Get all deliveries
+     * POST /api/deliveries → Create a delivery
+   * Boxes:
+
+     * GET /api/boxes/:numberBox/items → Get items in a box
+     * POST /api/boxes → Create a new box
