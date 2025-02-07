@@ -66,11 +66,12 @@
     *   [Mongoose](https://mongoosejs.com/) - Provides a structured way to interact with MongoDB, defining models and schemas.
     *   [Apollo Server](https://www.apollographql.com/docs/apollo-server/) - The GraphQL server implementation, handling GraphQL queries and mutations.
 
-
-<div style="display: flex; justify-content: space-around; padding-left: 60px; padding-rigth: 60pxS">
+<div align="center">
+<div style="display: flex; justify-content: space-around; padding: 50px">
   <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-1-.gif" width="120">
   <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-2-.gif" width="120">
   <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-3-.gif" width="120">
+</div>
 </div>
 
 *   **Other:**
