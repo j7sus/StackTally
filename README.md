@@ -52,6 +52,13 @@
 * `npm test` → Run unit tests
 
 ## Built With
+<div align="center">
+<div style="display: flex; gap: 20px; justify-content: space-around; padding: 40px">
+  <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-1-.gif" width="120">
+  <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-2-.gif" width="120">
+  <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-3-.gif" width="120">
+</div>
+</div>
 
 *   **Frontend:**
     *   [React](https://reactjs.org/) - Used for building the dynamic user interface and managing components.
@@ -66,13 +73,6 @@
     *   [Mongoose](https://mongoosejs.com/) - Provides a structured way to interact with MongoDB, defining models and schemas.
     *   [Apollo Server](https://www.apollographql.com/docs/apollo-server/) - The GraphQL server implementation, handling GraphQL queries and mutations.
 
-<div align="center">
-<div style="display: flex; justify-content: space-around; padding: 50px">
-  <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-1-.gif" width="120">
-  <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-2-.gif" width="120">
-  <img src="./client/src/assets/StackTally%20demo-gif/StackTallydemo-gif-3-.gif" width="120">
-</div>
-</div>
 
 *   **Other:**
     *   [npm](https://www.npmjs.com/) - Used for managing project dependencies and running scripts.
