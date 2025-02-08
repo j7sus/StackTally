@@ -81,7 +81,7 @@
 *   **Other:**
     *   [npm](https://www.npmjs.com/) - Used for managing project dependencies and running scripts.
     *   [Git](https://git-scm.com/) - Used for version control and collaboration.
-    *   Love, lots of love ♥️
+    *   Love, lots of love 🩶++;
 
 ## REST API
    * Deliveries:
