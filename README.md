@@ -34,14 +34,7 @@
    npm install
    ```
 
-#### 3. **Configure environment variables**
-
-  * Create a .env file in the root directory
-  * Copy the contents of .env.example (provided in the repository) into .env
-  * Set MONGO_URI and other required credentials
-  * Open the .env file and set the MONGO_URI and any other required credentials.
-
-#### 4. **Start the development server and client**
+#### 3 **Start the development server and client**
 
    ```bash
    npm run dev
