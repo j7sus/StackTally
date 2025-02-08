@@ -4,7 +4,6 @@
 
   <h3><i>"Smart management for stacked items,<br/> find it fast, count it smarter."</i></h3>
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blueviolet.svg)
 
 [![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/)
@@ -13,6 +12,7 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 </div>
+
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@
 #### 1. **Clone the repository**
 
    ```bash
-   git clone [https://github.com/tu_usuario/tu_proyecto.git](https://github.com/tu_usuario/tu_proyecto.git)
+   git clone https://github.com/j7sus/StackTally.git
    cd stack-tally
    ```
 #### 2. **Install dependencies**
@@ -36,14 +36,18 @@
 
 #### 3. **Configure environment variables**
 
-  * Copy .env.example to .env
+  * Create a .env file in the root directory
+  * Copy the contents of .env.example (provided in the repository) into .env
   * Set MONGO_URI and other required credentials
+  * Open the .env file and set the MONGO_URI and any other required credentials.
 
 #### 4. **Start the development server and client**
 
    ```bash
    npm run dev
    ```
+  Once both the frontend and the backend are running open [localhost:5173](http://localhost:5173) in your browser. Have fun!
+
 ## Useful Scripts
 * `npm run install-all` → Install dependencies for both client and server
 * `npm run dev` → Start both client and server in development mode
@@ -88,3 +92,9 @@
 
      * GET /api/boxes/:numberBox/items → Get items in a box
      * POST /api/boxes → Create a new box
+##
+:) <div align="center">
+  ![License: MIT](https://img.shields.io/badge/License-MIT-blueviolet.svg)
+</div>
+
+ 
